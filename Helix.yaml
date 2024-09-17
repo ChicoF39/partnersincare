@@ -1,0 +1,24 @@
+name: PIC
+description: |
+  PIC chatbot using multiple source
+assistants:
+- name: Helix 
+  model: llama3:instruct
+  provider: helix
+  system_prompt: |
+    You are an expert at answering questions about Hospice, Home Health, and Palliative Care Services in Central Oregon.    
+  knowledge:
+  - name: Partners in Care -info
+    refresh_enabled: true
+    # Every 24 hours
+    refresh_schedule: "@midnight"
+    source:
+      web:
+        rag_settings:
+          results_count: 7
+          chunk_size: 2048
+          chunk_overflow: 32
+        urls:
+         - https://www.partnersbend.org/
+        crawler:
+          enabled: true        
