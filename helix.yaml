@@ -1,24 +1,19 @@
 name: PIC
 description: |
-  PIC chatbot using multiple source
+  PIC chatbot using multiple URls
 assistants:
 - name: Helix 
   model: llama3:instruct
-  provider: helix
   system_prompt: |
-    You are an expert at answering questions about Hospice, Home Health, and Palliative Care Services in Central Oregon.    
+    You are an expert at answering questions about Hospice, Home Health, and Palliative Care Services in central oregon   
   knowledge:
-  - name: Partners in Care -info
+  - name: Partners in care info
     refresh_enabled: true
     # Every 24 hours
     refresh_schedule: "@midnight"
     source:
       web:
-        rag_settings:
-          results_count: 7
-          chunk_size: 2048
-          chunk_overflow: 32
         urls:
-         - https://www.partnersbend.org/
+         - https://www.partnersbend.org, https://lhcgroup.com/locations/heart-n-home-hospice-and-palliative-care-bend/, https://bristolhospice.com/, https://www.stcharleshealthcare.org/locations/bend-hospice,https://www.partnersbend.org/,https://bristolhospice.com/,https://www.stcharleshealthcare.org/locations/bend-hospice,https://www.comfortkeepers.com/care-services/specialized-care/end-of-life-care,https://nhcares.com/,https://www.hospiceofredmond.org/,https://www.partnersbend.org/services/hospice-house-bend-oregon/,https://www.yelp.com/biz/leisure-club-bend-3?osq=Hospice,https://www.yelp.com/biz/freedom-regenerative-medicine-bend?osq=Hospice,https://www.medicare.gov/care-compare/compare?providerType=Hospice&providerIds=261557,261623,261559&city=Kirksville&state=MO&zipcode=63501,https://www.medicare.gov/care-compare/en/assets/resources/hospice/HospiceChecklist-Final-Clean.pdf,https://www.medicare.gov/care-compare/compare?providerType=Hospice&providerIds=381515,381578,381539&city=Bend&state=OR&zipcode=,https://www.thegroundswellproject.com/compassionate-communities, https://www.partnersbend.org/services/home-health-and-hospice/,https://www.partnersbend.org/donate/,https://www.partnersbend.org/services/palliative-care-services/,https://www.partnersbend.org/hospice-care-providers/hospice-care-news/,https://www.partnersbend.org/services/home-health-services/,https://www.partnersbend.org/hospice-care-providers/service-area/,https://www.partnersbend.org/non-profit-donation-information/legacy-society/,https://www.partnersbend.org/terms-of-use/,https://www.partnersbend.org/non-profit-donation-information/contact-us/,https://www.partnersbend.org/hospice-care-providers/service-area/lapine-oregon/,https://www.partnersbend.org/hospice-care-providers/service-area/redmond-oregon/,https://www.partnersbend.org/hospice-care-providers/service-area/madras-oregon/,https://www.partnersbend.org/hospice-care-providers/service-area/prineville-oregon/,https://www.partnersbend.org/hospice-care-providers/service-area/sunriver-oregon/,https://www.partnersbend.org/hospice-care-providers/service-area/sisters-oregon/,https://www.partnersbend.org/services/hospice-house-bend-oregon/,https://www.partnersbend.org/education-and-resources/hospice-care-education/,https://www.partnersbend.org/education-and-resources/end-of-life-care-education/,https://www.partnersbend.org/hospice-care-providers/service-area/crooked-river-ranch-oregon/,https://www.partnersbend.org/hospice-care-providers/service-area/christmas-valley-and-fort-rock-oregon/,https://www.partnersbend.org/non-profit-donation-information/hospice-donations/,https://www.partnersbend.org/community-outreach-form/,https://www.partnersbend.org/card/,https://www.partnersbend.org/trn-tst/,https://www.partnersbend.org/catalog/care-for-uninsured/,https://www.partnersbend.org/catalog/chaplainsfund/,https://www.partnersbend.org/catalog/grief-programs/,https://www.partnersbend.org/catalog/veteran-support-services/,https://www.partnersbend.org/catalog/transitions-care/,https://www.partnersbend.org/catalog/one-of-everything/,https://www.partnersbend.org/catalog/,https://www.partnersbend.org/services/hospice-transitions-program/,https://www.partnersbend.org/community-education/,https://www.partnersbend.org/services/hospice-care-services/,https://www.partnersbend.org/hospice-care-providers/hospice-jobs-oregon/,https://www.partnersbend.org/services/veteran-support/,https://www.partnersbend.org/spousal-loss-support-group/,https://www.partnersbend.org/mindfulness-and-grief-class/,https://www.partnersbend.org/loss-of-a-child-support-group/,https://www.partnersbend.org/education-and-resources/community-resources/,https://www.partnersbend.org/education-and-resources/hospice-vocabulary/,https://www.partnersbend.org/hospice-care-providers/about/,https://www.partnersbend.org/give-hope/,https://www.partnersbend.org/hope/,https://www.partnersbend.org/non-profit-donation-information/hospice-volunteering/,https://www.partnersbend.org/non-profit-donation-information/hospice-workshops-and-classes/,https://www.partnersbend.org/services/grief-support/,   
         crawler:
-          enabled: true        
+          enabled: true
